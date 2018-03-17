@@ -1,0 +1,27 @@
+server:
+  port: 8083
+
+spring:
+  application:
+    name: eureka-service
+
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
+
+#
+#zuul:
+#   prefix: /api
+#   routes:
+#     auth-service:
+#       path: /auth-service/**
+#       sensitiveHeaders:
+##       url: http://localhost:8081
+#       serviceId : auth-service
